@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texts List</title>
+</head>
+<body>
+    <h1>Saved Texts</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Text</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for text_data in texts %}
+            <tr>
+                <td>{{ text_data.id }}</td>
+                <td>{{ text_data.text }}</td>
+                <td>
+                    <form action="/edit_text/{{ text_data.id }}" method="GET">
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/delete_text/{{ text_data.id }}" method="GET">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

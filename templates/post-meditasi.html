@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Meditasi | BaikMu App</title>
+    <link rel="shortcut icon" href="static/assets/images/favicon.png" type="image/svg+xml">
+    <link rel="stylesheet" href="static/src/input.css" />
+    <link rel="stylesheet" href="static/src/styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="static/src/assets/IconDashboard.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="wrapper relative right-[50%] top-[50%] translate-x-[50%] -translate-y-[5%] flex justify-center items-center p-5 my-8 sm:my-12 h-screen"
+    >
+      <form
+        method="POST"
+        action="/add_videos_meditasi"
+        class="flex justify-center items-center flex-col gap-3"
+      >
+        <div
+          class="title-app flex flex-col items-center justify-center w-full my-3"
+        >
+          <img
+            src="static/src/assets/LogoTransparent.png"
+            alt="BaikMu Logo"
+            class="w-[180px] -translate-x-4"
+          />
+          <div class="desc-app text-center">
+            <h1 class="text-xl font-semibold">BaikMu - Self Care</h1>
+            <h3>Aplikasi Kesehatan Mental</h3>
+          </div>
+        </div>
+        <div
+          class="field-input self-start flex justify-center items-start flex-col"
+        >
+          <label class="text-slate-600 label" for="title">Video Title</label>
+          <input
+            class="input input-bordered w-full max-w-xs"
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Type Here..."
+          />
+        </div>
+        <div
+          class="field-input self-start flex justify-center items-start flex-col"
+        >
+          <label class="text-slate-600 label" for="content"
+            >Channel Name</label
+          >
+          <textarea
+            class="textarea textarea-bordered"
+            name="channel_name"
+            id="channel_name"
+            cols="23"
+            rows="3"
+            style="resize: none"
+            placeholder="Type Here..."
+          ></textarea>
+        </div>
+        <div
+          class="field-input self-start flex justify-center items-start flex-col"
+        >
+          <label class="text-slate-600 label" for="category"
+            >Video ID</label
+          >
+          <input
+            class="input input-bordered w-full max-w-xs"
+            type="text"
+            name="video_id"
+            id="video_id"
+            placeholder="Type Here..."
+          />
+        </div>
+        <div
+          class="field-input self-start flex justify-center items-start flex-col"
+        >
+          <label class="text-slate-600 label" for="link">Thumbnail</label>
+          <input
+            class="input input-bordered w-full max-w-xs"
+            type="text"
+            name="thumbnail"
+            id="thumbnail"
+            placeholder="Type Here..."
+          />
+        </div>
+        <input type="submit" class="self-end bg-sky-500 hover:bg-sky-600 transition text-white px-5 py-2 rounded-xl shadow-lg" value="Post Video">
+      </form>
+    </div>
+    <div
+      class="text-center pb-3 mt-6 lg:mt-[8rem] text-slate-800"
+    >
+      BaikMu - Self Care <br />
+      Made using
+      <a href="https://daisyui.com" class="text-amber-500" target="_blank"
+        ><i class="bx bxs-florist"></i> DaisyUI</a
+      >
+    </div>
+  </body>
+</html>

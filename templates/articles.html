@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles | BaikMu App</title>
+    <link rel="shortcut icon" href="static/assets/images/favicon.png" type="image/svg+xml">
+    <link rel="stylesheet" href="static/src/input.css" />
+    <link rel="stylesheet" href="static/src/styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="static/src/assets/IconDashboard.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="package flex flex-row justify-center items-center">
+      <!-- start sidebar styling -->
+      <div
+        id="sidebar"
+        class="wrapper flex justify-start items-center gap-4 flex-col lg:w-fit min-h-screen h-screen lg:relative bg-white lg:bg-slate-100 z-[9999999] fixed top-0 transition-all duration-500 p-5 w-[200px] -left-[300px] lg:left-0"
+      >
+        <div class="toggles flex justify-center items-center gap-2">
+          <div class="title-sidebar">
+            <img
+              src="static/src/assets/LogoTransparent.png"
+              alt="BaikMu"
+              class="w-[180px]"
+            />
+          </div>
+          <div class="close-menu lg:hidden cursor-pointer ml-2">
+            <i class="bx bx-x text-2xl"></i>
+          </div>
+        </div>
+        <div
+          class="list-sidebar flex justify-start items-start flex-col gap-6 bg-white py-4 rounded-xl lg:shadow-lg h-[450px] w-[180px] lg:ml-5"
+        >
+          <a
+            href="{{ url_for('dashboard') }}"
+            class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full hover:text-[#73AEFF] font-medium flex-row justify-start px-6 py-3 items-center gap-3 text-[1rem]"
+          >
+            <div class="icon">
+              <i class="bx bxs-dashboard"></i>
+            </div>
+            <div class="text-box">Dashboard</div>
+          </a>
+          <a
+            href="{{ url_for('articles') }}"
+            class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full font-medium bg-slate-100 text-[#73AEFF] flex-row justify-start px-6 py-3 items-center gap-3 text-[1rem]"
+          >
+            <div class="icon">
+              <i class="bx bxs-notepad"></i>
+            </div>
+            <div class="text-box">Articles</div>
+          </a>
+          <a
+            href="{{ url_for('videos_meditasi') }}"
+            class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full hover:text-[#73AEFF] font-medium flex-row justify-start px-6 py-3 items-center gap-3 text-[1rem]"
+          >
+            <div class="icon">
+              <i class="bx bxs-analyse"></i>
+            </div>
+            <div class="text-box">Video Meditasi</div>
+          </a>
+          <a
+            href="{{ url_for('videos_musik') }}"
+            class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full hover:text-[#73AEFF] font-medium flex-row justify-start px-6 py-3 items-center gap-3 text-[1rem]"
+          >
+            <div class="icon">
+              <i class="bx bxs-analyse"></i>
+            </div>
+            <div class="text-box">Video Musik</div>
+          </a>
+          <a
+          href="{{ url_for('get_doctors') }}"
+          class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full hover:text-[#73AEFF] font-medium flex-row justify-start px-6 py-3 items-center gap-3 text-[1rem]"
+        >
+            <div class="icon">
+              <i class="bx bxs-analyse"></i>
+            </div>
+            <div class="text-box">Psikolog</div>
+          </a>
+          <a
+            href="{{ url_for('landing') }}"
+            class="box transition-all rounded-xl lg:rounded-none flex cursor-pointer w-full hover:text-red-600 flex-row justify-start focus:text-red-500 items-center gap-3 text-[1rem] px-6 py-3 text-red-500 font-medium"
+          >
+            <div class="icon">
+              <i class="bx bx-log-out bx-rotate-180"></i>
+            </div>
+            <div class="text-box">Logout</div>
+          </a>
+        </div>
+      </div>
+      <!-- end of sidebar styling -->
+
+      <!-- start content styling -->
+
+      <div
+        class="content flex flex-col justify-center items-center w-full h-screen"
+      >
+        <!-- start navbar styling -->
+
+        <div
+          class="navbar-top flex justify-between fixed top-0 lg:relative right-0 py-4 px-6 lg:px-8 items-center w-full h-[80px] lg:h-[150px] bg-white lg:bg-transparent lg:shadow-none shadow-md z-[9999]"
+        >
+          <div class="heading-page flex justify-center items-center gap-3">
+            <div class="hamburger cursor-pointer text-3xl lg:hidden block">
+              <i class="bx bx-menu"></i>
+            </div>
+            <h1 class="text-2xl font-semibold text-slate-800 lg:block hidden">
+              Articles
+            </h1>
+          </div>
+          <div
+            class="user-profile flex justify-center items-center gap-3 lg:gap-7"
+          >
+            <div
+              class="username flex flex-col justify-center items-end sm:text-base text-sm"
+            >
+              <h2>Hi, <span class="font-bold">Irfan Triadis</span></h2>
+              <h2>Admin</h2>
+            </div>
+            <div class="photo-profile">
+              <div
+                class="box-photo w-[2.6rem] h-[2.6rem] lg:w-[2.8rem] lg:h-[2.8rem] bg-slate-300 rounded-full text-center flex justify-center items-center"
+              >
+                <i class="bx bxs-user text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- end of navbar styling -->
+
+        <!-- start table styling -->
+        <div
+          class="wrapper-content w-full h-screen flex justify-start items-start gap-4 lg:-translate-y-1 sm:translate-y-[7.5rem] translate-y-[6.5rem] relative"
+        >
+          <div
+            class="ml-8 flex flex-col justify-center items-center absolute top-0"
+          >
+            <h1
+              class="text-2xl font-semibold text-slate-800 lg:hidden block mb-3 self-start"
+            >
+              Articles
+            </h1>
+
+            <div class="overflow-x-auto lg:w-[900px] sm:w-[720px] w-[320px] shadow-md">
+              <table
+                class="table table-xs sm:table-sm md:table-md lg:table-lg table-zebra-zebra"
+              >
+                <thead class="bg-slate-600 text-white">
+                  <tr class="border border-slate-300 text-center">
+                    <th class="border-x border-slate-300">No</th>
+                    <th class="border-x border-slate-300">Title</th>
+                    <th class="border-x border-slate-300">Kategori</th>
+                    <th class="border-x border-slate-300">Link Foto</th>
+                    <th class="border-x border-slate-300" class="text-center">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for article in articles %}
+                    <tr class="border border-slate-300">
+                      <td class="border-x border-slate-300">{{ loop.index }}</td>
+                      <td class="border-x border-slate-300">{{ article.title }}</td>
+                      <td class="border-x border-slate-300">{{ article.category }}</td>
+                      <td class="border-x border-slate-300"><a href="{{ article.link }}">{{ article.link }}</a></td>
+                      <td class="border-x border-slate-300 flex justify-center items-center gap-2 sm:gap-3 relative">
+                        <!--<a href="{{ url_for('edit_article', article_id=article.id) }}" class="btn btn-xs sm:btn-sm btn-warning">
+                          <i class="bx bx-pencil"></i>
+                        </a>-->
+                        <a href="{{ url_for('delete_article', article_id=article.id) }}" class="btn btn-xs sm:btn-sm btn-error">
+                          <i class="bx bx-trash"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="post-article flex justify-center items-center gap-3 self-end mt-1"
+            >
+              <h3 class="self-end text-sm font-semibold text-slate-500">
+                post article here...
+              </h3>
+              <a
+                href="{{ url_for('postarticle') }}"
+                class="btn btn-sm btn-success mt-3 shadow-lg"
+              >
+                <i class="bx bx-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- end of table styling -->
+      </div>
+    </div>
+
+    <!-- start footer styling -->
+
+    <div
+      class="text-center pb-3 mt-6 lg:mt-[8rem] text-slate-800"
+    >
+      BaikMu - Self Care <br />
+      Made using <i class="bx bxl-tailwind-css text-cyan-500"></i>
+      <a href="https://tailwindcss.com" class="text-cyan-500">Tailwindcss</a>
+    </div>
+
+    <div id="success-popup" style="display: none;">
+      <p>Artikel berhasil diposting!</p>
+    </div>
+    <script>
+      // Ambil elemen popup
+      var successPopup = document.getElementById('success-popup');
+  
+      // Tampilkan popup pesan sukses
+      function showSuccessPopup() {
+          successPopup.style.display = 'block';
+          // Sembunyikan popup setelah 3 detik (3000 milidetik)
+          setTimeout(function() {
+              successPopup.style.display = 'none';
+          }, 3000);
+      }
+  
+      // Panggil fungsi showSuccessPopup setelah mengarahkan kembali dari post_article
+      // Anda dapat menggunakan URL saat mengarahkan kembali jika perlu
+      // Contoh: window.location.href = '/post_article';
+      showSuccessPopup();
+    </script>
+
+    <!-- end of footer styling -->
+    <script src="static/src/index.js"></script>
+  </body>
+</html>

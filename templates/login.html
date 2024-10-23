@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | BaikMu App</title>
+    <link rel="stylesheet" href="static/src/input.css" />
+    <link rel="stylesheet" href="static/src/styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="static/src/assets/software-engineer.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white overflow-x-hidden">
+    <div class="container flex justify-between items-center p-4 w-screen h-screen mx-auto lg:translate-x-12">
+      <div class="login-hero hidden lg:flex lg:justify-center lg:items-center w-fit h-fit">
+        <img src="static/src/assets/hero-login.svg" alt="hero-login" class="scale-125">
+      </div>
+      <div class="form-login flex flex-col justify-center items-center gap-4 py-3">
+        <div class="title-form flex flex-col items-center justify-center">
+          <img src="static/src/assets/LogoBaikMu.png" alt="logo-baikmu" class="w-1/2 sm:w-1/3 lg:w-1/4 mb-2 block">
+          <h1 class="text-xl sm:text-2xl font-semibold">BaikMu - Self Care</h1>
+          <p class="text-lg tracking-wide mb-2">Aplikasi Kesehatan Mental</p>
+        </div>
+        <form action="{{ url_for('dashboard') }}" class="flex flex-col items-center gap-4">
+          <input autocomplete="off" class="focus:border-sky-500 p-3 px-4 w-[300px] bg-white rounded-2xl outline-none border-2 border-slate-200" placeholder="username" type="text" name="username" id="username">
+          <input autocomplete="off" class="focus:border-sky-500 p-3 px-4 w-[300px] bg-white rounded-2xl outline-none border-2 border-slate-200" placeholder="password" type="password" name="password" id="password">
+          <button type="submit" class="px-4 py-2 text-white bg-cyan-500 rounded-xl self-start">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

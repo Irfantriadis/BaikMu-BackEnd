@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaikMu - Self Care</title>
+  <link rel="shortcut icon" href="static/assets/images/favicon.png" type="image/svg+xml">
+  <link rel="stylesheet" href="static/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    /* CSS untuk efek loading */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader img {
+      width: 100px; /* Sesuaikan ukuran dengan logo loading Anda */
+      animation: spin 1s linear infinite; /* Animasi putaran */
+    }
+
+    @keyframes spin {
+      0% { transform: scale(1) rotate(0deg); }
+      75% { transform: scale(1) rotate(180deg); }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="loader">
+    <img src="static\assets\images\favicon.png" alt="Loading Logo">
+  </div>
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="logo">
+        <a href="{{ url_for('landing') }}"><img src="static/assets/images/logo.png" alt="Logo BaikMu" class="img-fluid"></a>
+      </div>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list container">
+          <li>
+            <a href="#home" class="navbar-link active" data-nav-link>Beranda</a>
+          </li>
+          <li>
+            <a href="#features" class="navbar-link" data-nav-link>Fitur Aplikasi</a>
+          </li>
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>Tentang Kami</a>
+          </li>
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Kontak</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section hero" aria-label="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+            <p class="section-subtitle">Aplikasi Kesehatan Mental</p>
+            <h1 class="h1 hero-title">BAIKMU</h1>
+            <h1>(Bantu Ingatkan Kesehatan Mentalmu)</h1>
+            <p class="section-text">
+              Aplikasi yang dapat membantu mengetahui tentang kesehatan mental seseorang, khususnya untuk kalangan generasi Z.
+            </p>
+            <ul class="btn-list">
+              <a href="#" class="button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store">
+              </a>             
+            </ul>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="static\assets\icon\banner1.png" width="949" height="908" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="section features" id="features" aria-label="features">
+        <div class="container">
+          <p class="section-subtitle" style="font-weight: bold; font-size: 18px; color: #1B94D8;">Semua Fitur</p>
+          <h2 class="h2 section-title">Fitur Aplikasi</h2>
+          <ul class="features-list" style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\test.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Tes Kondisi</h3>
+                  <p>Membantu anda mengetahui kondisi kesehatan mental anda saat ini</p>
+                </div>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\penanganan.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Penanganan</h3>
+                  <p>Beragam penanganan dapat membantu mengatasi masalah kesehatan mental anda</p>
+                </div>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\psikiater.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Mencari Psikiater</h3>
+                  <p>Membantu anda untuk mencari psikiater disekitar anda</p>
+                </div>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\note.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Catatan</h3>
+                  <p>Catatan sebagai media anda mencurahkan isi hati anda lewat tulisan</p>
+                </div>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\chatbot.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Chatbot</h3>
+                  <p>AI yang interaktif dapat membantu menjawab pertanyaan anda</p>
+                </div>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="#">
+                <div class="features-card">
+                  <div class="card-icon">
+                    <img src="static\assets\icon\book.png" width="100" height="100">
+                  </div>
+                  <h3 class="h3 card-title">Artikel</h3>
+                  <p>Media informasi dan pengetahuan baru seputar kesehatan mental</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>            
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="static\assets\icon\banner.png" width="449" height="608" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+          <div class="about-content">
+            <p class="section-subtitle">Aplikasi Kesehatan Mental</p>
+            <h2 class="h2 section-title">Tentang Aplikasi BaikMu</h2>
+            <p class="section-text">
+              BaikMu sendiri merupakan kepanjangan dari "Bantu Anda Ingatkan Kesehatan Mental-Mu". Jadi, BaikMu: Self Care ini mau ngingetin kamu tentang kesehatan mental nih, supaya kamu lebih aware lagi tentang kesehatan mental kamu.
+            </p>
+            <a href="#" class="btn btn-secondary">Dapatkan Sekarang</a>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-label="contact">
+        <div class="container">
+          <p class="section-subtitle" style="font-weight: bold; font-size: 18px; color: #1B94D8;">Hubungi Kami</p>
+          <h2 class="h2 section-title">Kontak</h2>
+
+          <div class="form-container">
+            <form action="#" method="post" id="contact-form">
+              <label for="name">Nama:</label>
+              <input type="text" id="name" name="name" required>
+      
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+      
+              <label for="message">Pesan:</label>
+              <textarea id="message" name="message" rows="8" required></textarea>
+      
+              <button type="submit">Kirim Pesan</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="section footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+          <a href="#" class="logo">BaikMu</a>
+          <p class="section-text">
+            Sebuah aplikasi yang dapat membantu mengetahui tentang kesehatan mental seseorang, khususnya untuk kalangan generasi Z.
+          </p>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-google"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Jelajahi</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Fitur Aplikasi</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Tentang Kami</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Kontak Kami</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Artikel Kesehatan Mental</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Lainnya</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Kebijakan Privasi</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Download Aplikasi</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Syarat & Ketentuan</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Hubungi Kami</p>
+          </li>
+          <li class="footer-item">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+            <a href="087791921967" class="item-link">0877-9192-1967</a>
+          </li>
+          <li class="footer-item">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+            <a href="baikmu@gmail.com" class="item-link">baikmu@gmail.com</a>
+          </li>
+          <li class="footer-item">
+            <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
+            <address class="item-link address">
+              Tegal, Jawa Tengah, Indonesia
+            </address>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">BaikMu</a>.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  <script>
+    // JavaScript untuk menyembunyikan efek loading setelah 3 detik
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        const loader = document.querySelector(".loader");
+        loader.style.display = "none";
+      }, 2000); // 3000 milidetik = 3 detik
+    });
+  </script>
+
+  <script src="static/assets/js/script.js" defer></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
